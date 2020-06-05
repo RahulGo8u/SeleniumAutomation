@@ -9,12 +9,12 @@ namespace SeleniumAutomation
     class Program
     {
         static string url = @"https://www.google.com";
-        static string imgPath = @"D:\SeleniumTestingScreenshot.jpg";
+        static string imgPath = @"D:\SeleniumTestingScreenshot1.jpg";
         static void Main(string[] args)
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("headless");//Comment if we want to see the window. 
-            var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), options);
+            var driver = new ChromeDriver(@"E:\git\Automation\SeleniumAutomation\SeleniumAutomation\packages\Selenium.WebDriver.ChromeDriver.2.36.0\driver\win32", options);
             driver.Navigate().GoToUrl(url);
             var screenshot = (driver as ITakesScreenshot).GetScreenshot();
             screenshot.SaveAsFile(imgPath, ImageFormat.Jpeg);
