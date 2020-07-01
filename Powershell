@@ -1,0 +1,12 @@
+Get-Date
+(Get-Date).AddMinutes(-)
+$cTime = (Get-Date).AddMinutes(-)
+$mTime = (Get-Date).AddMinutes(-)
+
+(Get-childItem).CreationTime = $cTime
+
+(Get-childItem ).LastAccessTime = $mTime
+(Get-childItem).LastWriteTime = $mTime
+
+
+(Get-childItem C:\temp\tet.txt).CreationTime = $cTime
